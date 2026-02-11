@@ -1,0 +1,223 @@
+/* SIZE */
+/* FONTS */
+/* MOBILE */
+.sqs-gallery-design-carousel.summary-block-wrapper {
+  opacity: 0;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  transition: opacity 0.3s ease;
+  -webkit-transition: opacity 0.3s ease;
+}
+.loaded-carousel .summary-item-list {
+  opacity: 1 !important;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+}
+.section-with-keito-slider .content-wrapper {
+  -webkit-box-sizing: border-box !important;
+          box-sizing: border-box !important;
+}
+.section-with-keito-slider .ghost-summary-heading-container {
+  display: none;
+}
+.keito-plugin.summary-block-wrapper {
+  max-width: 100%;
+  opacity: 1 !important;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+  margin: 0px auto !important;
+  -webkit-transform: none !important;
+      -ms-transform: none !important;
+          transform: none !important;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.keito-plugin.summary-block-wrapper .ghost-summary-headinng {
+  font-size: 40px;
+  color: #C58E78;
+  letter-spacing: 2px;
+  margin-top: 0px;
+  margin-bottom: 40px;
+}
+@media only screen and (max-width: 640px) {
+  .keito-plugin.summary-block-wrapper .ghost-summary-headinng {
+    font-size: 25px;
+    margin-bottom: 20.83333333px;
+  }
+}
+.keito-plugin.summary-block-wrapper .keito-images-wrapper {
+  width: 41%;
+}
+.keito-plugin.summary-block-wrapper .keito-images-wrapper .keito-inner-wrapper {
+  padding: 17px;
+}
+@media only screen and (max-width: 800px) {
+  .keito-plugin.summary-block-wrapper .keito-images-wrapper {
+    width: 100%;
+  }
+  .keito-plugin.summary-block-wrapper .keito-images-wrapper .keito-inner-wrapper {
+    padding-left: 0px;
+    padding-right: 0px;
+    margin-bottom: 10px;
+  }
+}
+.keito-plugin.summary-block-wrapper .summary-item-list-container {
+  width: 59%;
+  max-width: 430px;
+  padding: 17px;
+}
+@media only screen and (max-width: 800px) {
+  .keito-plugin.summary-block-wrapper .summary-item-list-container {
+    width: 100%;
+    max-width: none;
+    padding: 0px;
+  }
+}
+.keito-plugin.summary-block-wrapper .image-slide {
+  display: none;
+}
+.keito-plugin.summary-block-wrapper .image-slide.active-slide {
+  display: block;
+}
+.keito-plugin.summary-block-wrapper .summary-block-header {
+  display: none;
+}
+.keito-plugin.summary-block-wrapper .summary-item-list {
+  margin: 0px !important;
+  -webkit-transform: none !important;
+      -ms-transform: none !important;
+          transform: none !important;
+}
+.keito-plugin.summary-block-wrapper .summary-thumbnail-outer-container {
+  display: none;
+}
+.keito-plugin.summary-block-wrapper .summary-metadata-container {
+  display: none;
+}
+.keito-plugin.summary-block-wrapper .summary-item-list-container .summary-item-list {
+  white-space: normal;
+}
+.keito-plugin.summary-block-wrapper .summary-item-list-container .summary-item-list .summary-item {
+  width: 100% !important;
+  /*
+  margin: 0px !important;
+  padding: 20px 0px !important;
+  border-top: 1px solid #000;*/
+}
+@media only screen and (max-width: 640px) {
+  .keito-plugin.summary-block-wrapper .summary-item-list-container .summary-item-list .summary-item {
+    /*padding: 15px 0px !important;*/
+  }
+}
+.keito-plugin.summary-block-wrapper .summary-item-list-container .summary-item-list .summary-item .summary-excerpt {
+  display: none;
+}
+.keito-plugin.summary-block-wrapper .keito-images-wrapper .keito-slide > a {
+  display: block;
+}
+.keito-plugin.summary-block-wrapper .keito-images-wrapper .image-slide {
+  transition: all 0.3s ease-in;
+  -webkit-transition: all 0.3s ease-in;
+}
+.keito-plugin.summary-block-wrapper .keito-images-wrapper .image-slide.active-slide img {
+  opacity: 1;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+}
+.keito-plugin.summary-block-wrapper .keito-images-wrapper .image-slide-inner {
+  position: relative;
+  padding-bottom: 125%;
+}
+@media only screen and (max-width: 800px) {
+  .keito-plugin.summary-block-wrapper .keito-images-wrapper .image-slide-inner {
+    padding-bottom: 100%;
+  }
+}
+.keito-plugin.summary-block-wrapper .keito-images-wrapper .image-slide-inner img {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.keito-plugin.summary-block-wrapper .keito-images-wrapper img {
+  display: block;
+  width: 100%;
+  opacity: 0;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.keito-plugin.summary-block-wrapper .summary-title {
+  cursor: pointer;
+  margin: 0px;
+}
+.keito-plugin.summary-block-wrapper .summary-title a {
+  font-size: 17px;
+  color: #000;
+}
+@media only screen and (max-width: 800px) {
+  .keito-plugin.summary-block-wrapper .summary-title a {
+    font-size: 18px;
+  }
+}
+.keito-plugin.summary-block-wrapper .summary-title a {
+  pointer-events: none;
+}
+.keito-plugin.summary-block-wrapper .summary-excerpt {
+  margin: 0px;
+  margin-top: 10px;
+}
+.keito-plugin.summary-block-wrapper .summary-excerpt p {
+  margin: 0px !important;
+  font-size: 15px;
+  color: #000;
+  line-height: 1.2em;
+  letter-spacing: 0px;
+}
+@media only screen and (max-width: 640px) {
+  .keito-plugin.summary-block-wrapper .summary-excerpt p {
+    font-size: 14px;
+  }
+}
+.keito-plugin.summary-block-wrapper .summary-excerpt p:empty {
+  display: none;
+}
+.keito-plugin.summary-block-wrapper .summary-metadata-container {
+  display: none;
+}
+.keito-plugin.summary-block-wrapper .summary-thumbnail-outer-container {
+  display: none;
+}
+.keito-plugin.summary-block-wrapper .summary-item-list-container {
+  position: relative;
+}
+.keito-plugin.summary-block-wrapper .summary-item-list-container .hover-line {
+  position: absolute;
+  left: 0;
+  height: 100%;
+  width: 5px;
+  top: 0;
+  bottom: 0;
+  background-color: red;
+}
+.keito-plugin.summary-block-wrapper .summary-item-list-container .hover-line .hover-for-card {
+  background-color: blue;
+  top: 0;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
