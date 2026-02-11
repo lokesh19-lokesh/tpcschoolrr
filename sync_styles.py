@@ -58,10 +58,17 @@ def sync_styles():
         # Strategy: Remove Squarespace remote CSS. Insert our local CSS at the end of <head>.
         
         # Remove remote squarespace css
+        links_to_remove = []
         for link in target_soup.find_all('link', rel='stylesheet'):
-            href = link.get('href', '')
-            if 'squarespace.com' in href or 'sqspcdn.com' in href:
-                link.decompose()
+            try:
+                href = link.get('href', '')
+                if 'squarespace.com' in href or 'sqspcdn.com' in href:
+                    links_to_remove.append(link)
+            except Exception as e:
+                print(f"Skipping link due to error: {e}")
+
+        for link in links_to_remove:
+            link.decompose()
         
         # Insert new local CSS
         # We append them to the head.
@@ -80,29 +87,31 @@ def sync_styles():
             # We need to parse the header_content string back into a tag to replace
             new_header_tag = BeautifulSoup(header_content, 'html.parser').header
             
-            # OPTIONAL: Set active state
-            # "header-nav-item--active"
-            # We need to find the link in new_header_tag that matches filename
-            # Filenames: mission-values.html, etc.
-            # Links in header: href="mission-values.html"
-            
+            # 3. Update Active State
             # Reset all active states first
             for active_item in new_header_tag.find_all(class_='header-nav-item--active'):
                 active_item['class'].remove('header-nav-item--active')
-            
+            for active_item_mobile in new_header_tag.find_all(class_='header-menu-nav-item--active'):
+                active_item_mobile['class'].remove('header-menu-nav-item--active')
+            for active_link in new_header_tag.find_all(attrs={'aria-current': 'page'}):
+                del active_link['aria-current']
+
             # Find the nav item that links to this filename
-            # The structure is usually <div class="header-nav-item"><a href="...">...</a></div>
-            # Or <div class="header-nav-folder-item"><a href="...">...</a></div>
-            # Squarespace puts the active class on the wrapping div.
-            
-            target_link = new_header_tag.find('a', href=filename)
-            if target_link:
+            # Filenames: contact.html, etc.
+            # We search for all links to cover both desktop and mobile
+            target_links = new_header_tag.find_all('a', href=filename)
+            for target_link in target_links:
+                target_link['aria-current'] = 'page'
                 # Walk up to find the nav item container
                 parent = target_link.parent
-                while parent and parent.name != 'nav':
-                    if 'class' in parent.attrs and ('header-nav-item' in parent['class'] or 'header-nav-folder-item' in parent['class']):
-                        parent['class'].append('header-nav-item--active')
-                        break
+                while parent and parent.name != 'nav' and parent.name != 'body':
+                    if 'class' in parent.attrs: 
+                        if 'header-nav-item' in parent['class'] or 'header-nav-folder-item' in parent['class']:
+                             parent['class'].append('header-nav-item--active')
+                             break
+                        if 'header-menu-nav-item' in parent['class']:
+                             parent['class'].append('header-menu-nav-item--active')
+                             break
                     parent = parent.parent
 
             old_header.replace_with(new_header_tag)
