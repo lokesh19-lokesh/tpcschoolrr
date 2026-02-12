@@ -1,0 +1,106 @@
+/* ============================================
+   Call Button, Floating WhatsApp & Scroll Buttons
+   ============================================ */
+
+/* Call Button in Navbar */
+.navbar-call-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #2d4930;
+  color: #fff !important;
+  padding: 8px 16px;
+  border-radius: 50px;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none !important;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+.navbar-call-btn:hover {
+  background: #1e3322;
+  transform: scale(1.05);
+}
+.navbar-call-btn svg {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+}
+
+/* Mobile: icon only, no phone number text */
+@media (max-width: 999px) {
+  .navbar-call-btn .call-btn-text {
+    display: none;
+  }
+  .navbar-call-btn {
+    padding: 8px;
+  }
+}
+
+/* Floating Buttons Container */
+.floating-buttons-container {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  z-index: 99999;
+}
+
+/* Floating Button Base */
+.float-btn {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: none;
+}
+.float-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.35);
+}
+.float-btn svg {
+  width: 28px;
+  height: 28px;
+  fill: #fff;
+}
+
+/* WhatsApp Button */
+.whatsapp-btn {
+  background: #25D366;
+}
+
+/* Scroll to Top Button */
+.scroll-top-btn {
+  background: #2d4930;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+.scroll-top-btn.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Mobile adjustments */
+@media (max-width: 767px) {
+  .floating-buttons-container {
+    bottom: 16px;
+    right: 16px;
+  }
+  .float-btn {
+    width: 48px;
+    height: 48px;
+  }
+  .float-btn svg {
+    width: 24px;
+    height: 24px;
+  }
+}
