@@ -17,10 +17,12 @@
   transition: all 0.3s ease;
   white-space: nowrap;
 }
+
 .navbar-call-btn:hover {
   background: #1e3322;
   transform: scale(1.05);
 }
+
 .navbar-call-btn svg {
   width: 16px;
   height: 16px;
@@ -32,6 +34,7 @@
   .navbar-call-btn .call-btn-text {
     display: none;
   }
+
   .navbar-call-btn {
     padding: 8px;
   }
@@ -57,15 +60,17 @@
   align-items: center;
   justify-content: center;
   text-decoration: none;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
   transition: all 0.3s ease;
   cursor: pointer;
   border: none;
 }
+
 .float-btn:hover {
   transform: scale(1.1);
-  box-shadow: 0 6px 20px rgba(0,0,0,0.35);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
 }
+
 .float-btn svg {
   width: 28px;
   height: 28px;
@@ -77,6 +82,18 @@
   background: #25D366;
 }
 
+/* Floating Call Button - mobile only */
+.float-call-btn {
+  background: #2d4930;
+  display: none;
+}
+
+@media (max-width: 999px) {
+  .float-call-btn {
+    display: flex;
+  }
+}
+
 /* Scroll to Top Button */
 .scroll-top-btn {
   background: #2d4930;
@@ -84,6 +101,7 @@
   visibility: hidden;
   transition: all 0.3s ease;
 }
+
 .scroll-top-btn.visible {
   opacity: 1;
   visibility: visible;
@@ -95,10 +113,12 @@
     bottom: 16px;
     right: 16px;
   }
+
   .float-btn {
     width: 48px;
     height: 48px;
   }
+
   .float-btn svg {
     width: 24px;
     height: 24px;
