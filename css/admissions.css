@@ -1,0 +1,173 @@
+/* Admissions Page Redesign Styles */
+
+.admissions-content * {
+    box-sizing: border-box;
+}
+
+.admissions-hero-banner {
+    position: relative;
+    width: 100%;
+    height: 60vh;
+    min-height: 400px;
+    overflow: hidden;
+}
+
+.admissions-hero-banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.admissions-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    min-height: 60vh;
+    background-color: #f8f9fa;
+    width: 100%;
+    overflow-x: hidden;
+    padding-top: 40px;
+    /* Space between hero and form */
+}
+
+.admissions-form-column {
+    padding: 60px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 100vw;
+}
+
+.enquiry-form-container {
+    background-color: #2d4930;
+
+    color: #ffffff;
+    padding: 40px;
+    border-radius: 30px;
+    width: 100%;
+    max-width: 650px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+.enquiry-form-container h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    font-weight: 700;
+    color: #ffffff;
+    /* Explicitly set to white */
+}
+
+.enquiry-form-container p {
+    margin-bottom: 30px;
+    line-height: 1.6;
+    opacity: 0.9;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.form-field {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-field.full-width {
+    grid-column: span 2;
+}
+
+.form-field label {
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.form-field input,
+.form-field select {
+    padding: 12px 15px;
+    border-radius: 8px;
+    border: none;
+    background-color: #ffffff;
+    color: #333;
+    font-size: 1rem;
+}
+
+.radio-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.radio-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+
+.enquire-btn-container {
+    margin-top: 30px;
+}
+
+.enquire-now-btn {
+    background-color: #f0f0f0;
+    color: #333;
+    border: none;
+    padding: 15px 40px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.enquire-now-btn:hover {
+    background-color: #e0e0e0;
+}
+
+/* Mobile Responsive */
+@media (max-width: 991px) {
+    .admissions-hero-banner {
+        height: 40vh;
+        min-height: 250px;
+    }
+
+    .admissions-content {
+        padding-top: 20px;
+        flex-direction: column;
+        min-height: auto;
+    }
+
+    .admissions-form-column {
+        padding: 40px 20px;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    .form-field {
+        grid-column: span 1 !important;
+    }
+
+    .radio-group {
+        flex-wrap: wrap !important;
+        gap: 10px !important;
+    }
+
+    .enquiry-form-container {
+        padding: 30px 15px !important;
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    .enquiry-form-container h2 {
+        font-size: 1.8rem !important;
+    }
+}
