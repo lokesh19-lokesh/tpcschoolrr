@@ -1,0 +1,63 @@
+/* Contact Page Styles */
+
+.contact-hero-banner {
+    position: relative;
+    width: 100%;
+    height: 60vh;
+    min-height: 400px;
+    overflow: hidden;
+}
+
+.contact-hero-banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    object-position: center;
+}
+
+.contact-hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    /* Dark overlay for text readability */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-hero-title {
+    color: #fff;
+    font-size: 3rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-align: center;
+}
+
+/* Form Container Fix */
+.contact-form-section {
+    padding: 60px 20px;
+    background-color: #fff;
+}
+
+.form-wrapper {
+    min-height: 500px;
+    /* Prevent layout shift */
+    position: relative;
+}
+
+/* Mobile Responsive */
+@media (max-width: 991px) {
+    .contact-hero-banner {
+        height: 40vh;
+        min-height: 250px;
+    }
+
+    .contact-hero-title {
+        font-size: 2rem;
+    }
+}
