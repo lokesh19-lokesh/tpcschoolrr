@@ -126,6 +126,17 @@
 }
 
 /* Footer whitespace fix */
+#footer-sections {
+  background-color: #2d4930 !important;
+  color: #ffffff !important;
+}
+
+/* Ensure background applies to child elements too */
+#footer-sections,
+#footer-sections .section-background {
+  background-color: #2d4930 !important;
+}
+
 #footer-sections .page-section {
   min-height: auto !important;
 }
