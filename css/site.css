@@ -40737,3 +40737,54 @@ body .keito-plugin.summary-block-wrapper .summary-excerpt p {
 #block-f6a55a57b237ac8e37b4 p {
     white-space: normal !important;
 }
+
+/* Welcome Section Animations */
+.welcome-section {
+    position: relative;
+    overflow: hidden;
+    /* Ensure images don't overflow */
+}
+
+.welcome-image {
+    position: absolute;
+    width: 250px;
+    /* Adjust size as needed */
+    height: auto;
+    z-index: 10;
+    pointer-events: none;
+    /* Let clicks pass through */
+    opacity: 0.9;
+}
+
+.welcome-image.left {
+    left: 0px;
+    bottom: -15px;
+    animation: floating 4s ease-in-out infinite;
+}
+
+.welcome-image.right {
+    right: 0px;
+    top: -30px;
+    animation: floating 5s ease-in-out infinite reverse;
+}
+
+@keyframes floating {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .welcome-image {
+        display: none;
+    }
+}
