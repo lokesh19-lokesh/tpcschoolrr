@@ -4,10 +4,10 @@
     /* RIVO Dark Green */
     color: #ffffff;
     /* White text */
-    padding: 60px 4vw 20px;
+    padding: 40px 4vw 15px;
     font-family: "Proxima Nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 16px;
-    line-height: 1.6;
+    font-size: 15px;
+    line-height: 1.5;
 }
 
 .footer-content {
@@ -15,7 +15,7 @@
     justify-content: space-between;
     align-items: stretch;
     max-width: 1400px;
-    margin: 0 auto 50px;
+    margin: 0 auto 30px;
 }
 
 .footer-left {
@@ -24,8 +24,8 @@
 }
 
 .footer-logo {
-    max-width: 150px;
-    margin-bottom: 20px;
+    max-width: 130px;
+    margin-bottom: 15px;
     display: block;
     /* Invert logo if needed, or rely on it being visible */
 }
@@ -67,11 +67,11 @@
 /* Happy Childhood Text */
 .happy-movement-text {
     font-family: "Shadows Into Light", "Marker Felt", "Comic Sans MS", cursive, sans-serif;
-    font-size: 3rem;
+    font-size: 2.2rem;
     line-height: 1.1;
     color: #ffffff;
     /* White text */
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     text-transform: uppercase;
 }
 
@@ -93,12 +93,12 @@
 }
 
 .social-icon {
-    width: 45px;
-    height: 45px;
+    width: 38px;
+    height: 38px;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 10px;
+    border-radius: 8px;
     transition: all 0.3s ease;
     background-color: rgba(255, 255, 255, 0.15);
     /* Semi-transparent background */
@@ -158,10 +158,16 @@
         margin-bottom: 30px;
     }
 
+    .happy-movement-text {
+        font-size: 1.8rem;
+        margin-bottom: 15px;
+    }
+
     .footer-bottom {
         flex-direction: column;
         align-items: center;
-        gap: 10px;
+        gap: 5px;
         text-align: center;
+        padding-top: 15px;
     }
 }
