@@ -40486,3 +40486,195 @@ body .keito-plugin.summary-block-wrapper .summary-excerpt p {
 #footer-sections strong {
     color: #ffffff !important;
 }
+
+/* Update Why Choose RIVO section to 2x2 grid on mobile */
+@media screen and (max-width: 767px) {
+
+    /* Adjust Container Rows */
+    .fe-6320b57fb29cbf2f97356152 {
+        grid-template-rows: repeat(32, minmax(24px, auto)) !important;
+    }
+
+    /* Modern - Row 1 Left */
+    /* Image */
+    .fe-block-yui_3_17_2_1_1663145587161_140882 {
+        grid-area: 4/2/8/6 !important;
+    }
+
+    /* Title */
+    .fe-block-yui_3_17_2_1_1663157991869_54649 {
+        grid-area: 8/2/10/6 !important;
+    }
+
+    /* Text */
+    .fe-block-yui_3_17_2_1_1663145587161_145155 {
+        grid-area: 10/2/14/6 !important;
+    }
+
+    /* Fun - Row 1 Right */
+    /* Image */
+    .fe-block-4adc71efe96acc37b3f5 {
+        grid-area: 4/6/8/10 !important;
+    }
+
+    /* Title */
+    .fe-block-yui_3_17_2_1_1663145587161_151974 {
+        grid-area: 8/6/10/10 !important;
+    }
+
+    /* Text */
+    .fe-block-b1ef5c9054a32e78f865 {
+        grid-area: 10/6/14/10 !important;
+    }
+
+    /* Natural - Row 2 Left */
+    /* Image */
+    .fe-block-2a6679b4e92fca6b7a1f {
+        grid-area: 14/2/18/6 !important;
+    }
+
+    /* Title */
+    .fe-block-0a4eadf10c28bad64cce {
+        grid-area: 18/2/20/6 !important;
+    }
+
+    /* Text */
+    .fe-block-ca1d4e463698f0056e76 {
+        grid-area: 20/2/24/6 !important;
+    }
+
+    /* Ethical - Row 2 Right */
+    /* Image */
+    .fe-block-f85085cffb1736daa5fc {
+        grid-area: 14/6/18/6 !important;
+        /* Wait, this ID might be wrong? No, checked line 1178 */
+        grid-area: 14/6/18/10 !important;
+    }
+
+    /* Title */
+    .fe-block-4de272027a995d5fa29a {
+        grid-area: 18/6/20/10 !important;
+    }
+
+    /* Text */
+    .fe-block-f6a55a57b237ac8e37b4 {
+        grid-area: 20/6/24/10 !important;
+    }
+
+    /* Quality Educators - Row 3 Left */
+    /* Wait, I need the IDs for Quality Educators and Teach-Child Ratio.
+       Quality Image: block-ca1d4e463698f0056e76 (Diamond) -> Wait, line 1401
+       Quality Title: block-f85085cffb1736daa5fc -> Wait, line 1417
+       Let me re-verify IDs from lines 1400-1460 
+    */
+    /* Correct IDs based on reading:
+       Diamond Image (Quality?): block-ca1d4e463698f0056e76 (Line 1402)
+       Quality Title: block-f85085cffb1736daa5fc (Line 1417 "Quality Educators") - Wait, line 1421 says "Quality Educators"
+       Quality Text: Is inside block-f85085cffb1736daa5fc? Yes, line 1422.
+       
+       So for Quality Educators:
+       Image: block-ca1d4e463698f0056e76
+       Text/Title: block-f85085cffb1736daa5fc (Contains both h3 and p)
+
+       Teach-Child Ratio:
+       Image: block-4de272027a995d5fa29a (Scale) (Line 1430)
+       Title/Text: block-f6a55a57b237ac8e37b4 (Line 1445 "Teach-Child Ratio")
+
+       So my previous Ethical mapping was wrong?
+       Let's re-read lines 1360-1400 for Ethical.
+       Ethical Title: block-0a4eadf10c28bad64cce (Line 1391 "Ethical") - Yes.
+       Ethical Image: block-2a6679b4e92fca6b7a1f (Line 1375 "Hand with heart") - Yes.
+       Ethical Text: Wait, line 1396 is inside block-0a4eadf10c28bad64cce.
+       
+       So for Ethical:
+       Image: block-2a6679b4e92fca6b7a1f
+       Title/Text: block-0a4eadf10c28bad64cce
+       
+       Natural:
+       Title: block-b1ef5c9054a32e78f865 (Line 1363 "Natural")
+       Image: block-yui_3_17_2_1_1663145587161_151974 (Line 1347 "Plant")
+       
+       Fun:
+       Title: block-4adc71efe96acc37b3f5 (Line 1335 "Fun")
+       Image: block-yui_3_17_2_1_1663145587161_145155 (Line 1319 "Popper")
+       
+       Modern:
+       Title: block-yui_3_17_2_1_1663157991869_54649 (Line 1307 "Modern")
+       Image: block-yui_3_17_2_1_1663145587161_140882 (Line 1291 "Star")
+       
+       Okay, slight realignment of IDs.
+    */
+
+    /* Row 1: Modern (Left) & Fun (Right) */
+    /* Modern Image */
+    .fe-block-yui_3_17_2_1_1663145587161_140882 {
+        grid-area: 4/2/8/6 !important;
+    }
+
+    /* Modern Text */
+    .fe-block-yui_3_17_2_1_1663157991869_54649 {
+        grid-area: 8/2/14/6 !important;
+    }
+
+    /* Fun Image */
+    .fe-block-yui_3_17_2_1_1663145587161_145155 {
+        grid-area: 4/6/8/10 !important;
+    }
+
+    /* Fun Text */
+    .fe-block-4adc71efe96acc37b3f5 {
+        grid-area: 8/6/14/10 !important;
+    }
+
+    /* Row 2: Natural (Left) & Ethical (Right) */
+    /* Natural Image */
+    .fe-block-yui_3_17_2_1_1663145587161_151974 {
+        grid-area: 14/2/18/6 !important;
+    }
+
+    /* Natural Text */
+    .fe-block-b1ef5c9054a32e78f865 {
+        grid-area: 18/2/24/6 !important;
+    }
+
+    /* Ethical Image */
+    .fe-block-2a6679b4e92fca6b7a1f {
+        grid-area: 14/6/18/10 !important;
+    }
+
+    /* Ethical Text */
+    .fe-block-0a4eadf10c28bad64cce {
+        grid-area: 18/6/24/10 !important;
+    }
+
+    /* Row 3: Quality (Left) & Ratio (Right) */
+    /* Quality Image */
+    .fe-block-ca1d4e463698f0056e76 {
+        grid-area: 24/2/28/6 !important;
+    }
+
+    /* Quality Text */
+    .fe-block-f85085cffb1736daa5fc {
+        grid-area: 28/2/34/6 !important;
+    }
+
+    /* Ratio Image */
+    .fe-block-4de272027a995d5fa29a {
+        grid-area: 24/6/28/10 !important;
+    }
+
+    /* Ratio Text */
+    .fe-block-f6a55a57b237ac8e37b4 {
+        grid-area: 28/6/34/10 !important;
+    }
+}
+
+/* Fix text wrapping for Why Choose RIVO descriptions */
+#block-yui_3_17_2_1_1663157991869_54649 p,
+#block-4adc71efe96acc37b3f5 p,
+#block-b1ef5c9054a32e78f865 p,
+#block-0a4eadf10c28bad64cce p,
+#block-f85085cffb1736daa5fc p,
+#block-f6a55a57b237ac8e37b4 p {
+    white-space: normal !important;
+}
