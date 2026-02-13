@@ -40678,3 +40678,62 @@ body .keito-plugin.summary-block-wrapper .summary-excerpt p {
 #block-f6a55a57b237ac8e37b4 p {
     white-space: normal !important;
 }
+
+/* Welcome Section Styles */
+.welcome-section {
+    background-color: #eae0d5 !important;
+    /* Beige background */
+    padding: 6vw 4vw;
+    text-align: center;
+}
+
+.welcome-heading {
+    font-size: 2.5rem;
+    color: #4a4a4a;
+    /* Dark gray for "WELCOME TO" */
+    margin-bottom: 2rem;
+    font-weight: normal;
+    font-family: 'Brandon Grotesque', sans-serif;
+    /* Matching site font */
+    letter-spacing: 0.05em;
+}
+
+.brand-name {
+    color: #2d4930;
+
+    font-weight: bold;
+    font-size: 1.2em;
+    /* Slightly larger */
+}
+
+.welcome-text {
+    max-width: 800px;
+    margin: 0 auto;
+    color: #4a4a4a;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.welcome-text p {
+    margin-bottom: 1.5rem;
+}
+
+@media screen and (max-width: 767px) {
+    .welcome-heading {
+        font-size: 2rem;
+    }
+
+    .welcome-section {
+        padding: 10vw 6vw;
+    }
+}
+
+/* Fix text wrapping for Why Choose RIVO descriptions */
+#block-yui_3_17_2_1_1663157991869_54649 p,
+#block-4adc71efe96acc37b3f5 p,
+#block-b1ef5c9054a32e78f865 p,
+#block-0a4eadf10c28bad64cce p,
+#block-f85085cffb1736daa5fc p,
+#block-f6a55a57b237ac8e37b4 p {
+    white-space: normal !important;
+}
