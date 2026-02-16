@@ -1,0 +1,9 @@
+/* Custom styles to override default theme colors */
+
+/* Welcome Section - Force white text */
+.welcome-section .welcome-heading,
+.welcome-section .welcome-text,
+.welcome-section .welcome-text p,
+.welcome-section .brand-name {
+    color: #ffffff !important;
+}
