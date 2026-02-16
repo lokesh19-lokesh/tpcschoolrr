@@ -1,0 +1,52 @@
+/* Custom Slider Styles */
+.simple-slider-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    /* Default to full height */
+    /* Force full height to prevent collapse on mobile */
+    min-height: 100%;
+    overflow: hidden;
+    z-index: 10;
+    /* Ensure it stays on top */
+}
+
+@media (max-width: 767px) {
+
+    .gallery-fullscreen-slideshow,
+    .gallery-fullscreen-slideshow-list {
+        height: 50vh !important;
+        min-height: auto !important;
+    }
+
+    .simple-slider-container {
+        height: 50vh !important;
+        /* Decreased height for mobile */
+        position: relative;
+        z-index: 10;
+        margin-bottom: 0;
+        /* Let the parent container handle spacing if needed, or add padding to parent */
+    }
+
+    /* Ensure the section containing the slideshow has space below it */
+    .gallery-fullscreen-slideshow {
+        margin-bottom: 60px !important;
+    }
+}
+
+.simple-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    z-index: 1;
+}
+
+.simple-slide.active {
+    opacity: 1;
+    z-index: 2;
+}
