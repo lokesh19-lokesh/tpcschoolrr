@@ -858,6 +858,282 @@ your child’s spot in a safe, nurturing, and fun early learning program." name=
             </div>
           </div>
         </section>
+        <section class="programs-section" style="padding: 60px 20px; text-align: center; background-color: #f9f9f9;">
+          <style>
+            .programs-container {
+              display: flex;
+              justify-content: center;
+              gap: 20px;
+              flex-wrap: wrap;
+              max-width: 1200px;
+              margin: 0 auto;
+            }
+
+            .program-card {
+              background: #fff;
+              border-radius: 10px;
+              padding: 20px;
+              width: 300px;
+              cursor: pointer;
+              transition: all 0.3s ease;
+              box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+              border: 2px solid transparent;
+              position: relative;
+              box-sizing: border-box;
+              /* Fix overflow */
+            }
+
+            .program-card.active {
+              background-color: #2d4930;
+              color: white;
+              border-color: #f0ad4e;
+              transform: scale(1.05);
+              z-index: 2;
+            }
+
+            .program-card img {
+              width: 100%;
+              height: 200px;
+              object-fit: cover;
+              border-radius: 8px;
+              margin-bottom: 15px;
+            }
+
+            .program-card h3 {
+              font-size: 1.2em;
+              margin: 10px 0;
+              text-transform: uppercase;
+              font-weight: bold;
+            }
+
+            .program-card p {
+              font-size: 0.9em;
+              color: inherit;
+            }
+
+            /* Desktop Details */
+            .program-details-desktop {
+              background-color: #2d4930;
+              color: white;
+              padding: 40px;
+              margin-top: 40px;
+              border-radius: 10px;
+              max-width: 1200px;
+              margin-left: auto;
+              margin-right: auto;
+              text-align: left;
+              min-height: 200px;
+            }
+
+            /* Mobile Details */
+            .program-details-mobile {
+              display: none;
+              /* Hidden by default */
+              background-color: #2d4930;
+              color: white;
+              padding: 20px;
+              text-align: left;
+              margin-top: 10px;
+              margin-bottom: 20px;
+              border-radius: 10px;
+              width: 100%;
+              box-sizing: border-box;
+              /* Fix overflow */
+            }
+
+            .hidden {
+              display: none !important;
+            }
+
+            /* Responsive */
+            @media (max-width: 768px) {
+              .programs-container {
+                flex-direction: column;
+                align-items: center;
+              }
+
+              .program-card {
+                width: 100%;
+                max-width: 400px;
+              }
+
+              .program-details-desktop {
+                display: none;
+              }
+
+              /* On mobile, we want the active card to NOT scale too much or shift layout weirdly, 
+                  and we want the content to be visible. */
+              .program-card.active {
+                transform: scale(1.02);
+              }
+            }
+
+            @media (min-width: 769px) {
+              .program-details-mobile {
+                display: none !important;
+                /* Force hide on desktop */
+              }
+            }
+          </style>
+
+          <div class="programs-container">
+            <!-- Playgroup -->
+            <div id="card-playgroup" class="program-card active" onclick="handleProgramClick('playgroup')">
+              <img src="newmedias/playgroup.jpg" alt="Playgroup">
+              <h3>Playgroup</h3>
+              <p>Age 2-3 years</p>
+            </div>
+            <div id="mobile-content-playgroup" class="program-details-mobile">
+              <!-- Content injected via JS or static duplicate -->
+              <p>Playgroup is a child’s first step toward independent schooling, helping them smoothly transition from
+                the comfort of their primary caregiver. Our play-based curriculum encourages children to explore,
+                discover, and engage in a variety of sensory, creative, and physical activities, while gradually
+                developing their ability to focus and complete tasks.</p>
+              <br>
+              <p>Our learning objectives focus on developing early literacy skills while encouraging independence in
+                young learners. Special events and outdoor field trips create meaningful, memorable experiences, and a
+                range of co-curricular activities supports holistic development. We maintain a 10:1 student–teacher
+                ratio, with each session lasting three hours.</p>
+            </div>
+
+            <!-- Nursery -->
+            <div id="card-nursery" class="program-card" onclick="handleProgramClick('nursery')">
+              <img src="newmedias/nursery.jpg" alt="Nursery">
+              <h3>Nursery</h3>
+              <p>Age 3-4 years</p>
+            </div>
+            <div id="mobile-content-nursery" class="program-details-mobile">
+              <p>Our Nursery curriculum builds a strong foundation for future learning within a safe, nurturing
+                environment where every child feels valued, confident, and independent. The classrooms emphasize early
+                literacy while seamlessly integrating co-curricular activities into everyday learning.</p>
+              <br>
+              <p>Designed to support holistic development, our curriculum uses play-based learning to encourage children
+                to ask questions, plan investigations, explore outcomes, and draw logical conclusions, with teachers
+                guiding and supporting them throughout the process. Reading becomes a key focus in the Nursery
+                programme, while experiential learning through events and field trips adds excitement and depth to their
+                education. We maintain a 10:1 student–teacher ratio, and each session runs for four hours.</p>
+            </div>
+
+            <!-- Pre-Primary -->
+            <div id="card-preprimary" class="program-card" onclick="handleProgramClick('preprimary')">
+              <img src="newmedias/preprimary.jpg" alt="Pre-Primary">
+              <h3>Pre-Primary 1 & 2</h3>
+              <p>Age 4-6 years</p>
+            </div>
+            <div id="mobile-content-preprimary" class="program-details-mobile">
+              <p>In PP1 and PP2, we adopt an inquiry-based approach that nurtures children’s curiosity and encourages
+                experiential learning. The environment serves as a third teacher, thoughtfully designed with purposeful
+                materials that support relationships, communication, collaboration, and exploration through play.
+                Carefully selected resources are added to inspire creativity, problem-solving, experimentation, and
+                open-ended learning.</p>
+              <br>
+              <p>The curriculum is organised into interdisciplinary units that integrate multiple subject areas, making
+                learning engaging and meaningful. Through hands-on activities, play, and project work, children actively
+                investigate their interests, discover new ideas, and develop their own theories. Teachers support each
+                child’s unique learning style, interests, and talents, fostering learner agency and emphasising the
+                development of communication and thinking skills.</p>
+              <br>
+              <p>Our curriculum covers key areas including Language & Literacy, Numeracy, Science, Social Studies,
+                Creative and Visual Arts, and Personal, Social, Emotional, and Physical Development. Reading is a core
+                component of these programmes, and we follow a structured reading plan to support children’s learning at
+                school.</p>
+            </div>
+          </div>
+
+          <!-- Desktop Details Container -->
+          <div class="program-details-desktop">
+            <div id="desktop-content-playgroup">
+              <p>Playgroup is a child’s first step toward independent schooling, helping them smoothly transition from
+                the comfort of their primary caregiver. Our play-based curriculum encourages children to explore,
+                discover, and engage in a variety of sensory, creative, and physical activities, while gradually
+                developing their ability to focus and complete tasks.</p>
+              <br>
+              <p>Our learning objectives focus on developing early literacy skills while encouraging independence in
+                young learners. Special events and outdoor field trips create meaningful, memorable experiences, and a
+                range of co-curricular activities supports holistic development. We maintain a 10:1 student–teacher
+                ratio, with each session lasting three hours.</p>
+            </div>
+            <div id="desktop-content-nursery" class="hidden">
+              <p>Our Nursery curriculum builds a strong foundation for future learning within a safe, nurturing
+                environment where every child feels valued, confident, and independent. The classrooms emphasize early
+                literacy while seamlessly integrating co-curricular activities into everyday learning.</p>
+              <br>
+              <p>Designed to support holistic development, our curriculum uses play-based learning to encourage children
+                to ask questions, plan investigations, explore outcomes, and draw logical conclusions, with teachers
+                guiding and supporting them throughout the process. Reading becomes a key focus in the Nursery
+                programme, while experiential learning through events and field trips adds excitement and depth to their
+                education. We maintain a 10:1 student–teacher ratio, and each session runs for four hours.</p>
+            </div>
+            <div id="desktop-content-preprimary" class="hidden">
+              <p>In PP1 and PP2, we adopt an inquiry-based approach that nurtures children’s curiosity and encourages
+                experiential learning. The environment serves as a third teacher, thoughtfully designed with purposeful
+                materials that support relationships, communication, collaboration, and exploration through play.
+                Carefully selected resources are added to inspire creativity, problem-solving, experimentation, and
+                open-ended learning.</p>
+              <br>
+              <p>The curriculum is organised into interdisciplinary units that integrate multiple subject areas, making
+                learning engaging and meaningful. Through hands-on activities, play, and project work, children actively
+                investigate their interests, discover new ideas, and develop their own theories. Teachers support each
+                child’s unique learning style, interests, and talents, fostering learner agency and emphasising the
+                development of communication and thinking skills.</p>
+              <br>
+              <p>Our curriculum covers key areas including Language & Literacy, Numeracy, Science, Social Studies,
+                Creative and Visual Arts, and Personal, Social, Emotional, and Physical Development. Reading is a core
+                component of these programmes, and we follow a structured reading plan to support children’s learning at
+                school.</p>
+            </div>
+          </div>
+
+          <script>
+            // Initialize active state logic
+            function handleProgramClick(programId) {
+              const isMobile = window.innerWidth <= 768;
+
+              // Deactivate all cards
+              document.querySelectorAll('.program-card').forEach(c => c.classList.remove('active'));
+
+              // Activate clicked card
+              document.getElementById('card-' + programId).classList.add('active');
+
+              if (isMobile) {
+                // Mobile behavior: Toggle content below card
+                // Hide all mobile contents
+                document.querySelectorAll('.program-details-mobile').forEach(c => c.style.display = 'none');
+                // Show selected mobile content
+                document.getElementById('mobile-content-' + programId).style.display = 'block';
+              } else {
+                // Desktop behavior: Switch tab content
+                document.getElementById('desktop-content-playgroup').classList.add('hidden');
+                document.getElementById('desktop-content-nursery').classList.add('hidden');
+                document.getElementById('desktop-content-preprimary').classList.add('hidden');
+
+                document.getElementById('desktop-content-' + programId).classList.remove('hidden');
+              }
+            }
+
+            // Init mobile state on load if needed
+            window.addEventListener('load', () => {
+              if (window.innerWidth <= 768) {
+                // Check which is active and show it
+                // Default Playgroup is active in HTML
+                document.getElementById('mobile-content-playgroup').style.display = 'block';
+              }
+            });
+
+            // Handle resize just in case
+            window.addEventListener('resize', () => {
+              const activeCard = document.querySelector('.program-card.active');
+              if (activeCard) {
+                const activeId = activeCard.id.replace('card-', '');
+                handleProgramClick(activeId); // Re-apply logic based on new width
+              } else {
+                // If no card is active (e.g., on initial load before any click),
+                // default to 'playgroup' or handle as appropriate.
+                handleProgramClick('playgroup');
+              }
+            });
+          </script>
+        </section>
       </article>
       <div class="admissions-content">
         <div class="admissions-form-column">
