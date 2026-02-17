@@ -1499,9 +1499,7 @@ Discover our blend of play, learning, and love today!" name="description" />
               </div>
             </div>
           </div>
-        </section> -->
-
-        <!-- Programs Section -->
+        </section>        <!-- Programs Section -->
         <section class="programs-section" style="padding: 60px 20px; text-align: center; background-color: #f9f9f9;">
           <style>
             .programs-container {
@@ -1522,15 +1520,17 @@ Discover our blend of play, learning, and love today!" name="description" />
               transition: all 0.3s ease;
               box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
               border: 2px solid transparent;
+              position: relative;
+              box-sizing: border-box;
+              /* Fix overflow */
             }
 
             .program-card.active {
               background-color: #5b7c99;
-              /* Match reference blue */
               color: white;
               border-color: #f0ad4e;
-              /* Match reference yellow border */
               transform: scale(1.05);
+              z-index: 2;
             }
 
             .program-card img {
@@ -1553,7 +1553,8 @@ Discover our blend of play, learning, and love today!" name="description" />
               color: inherit;
             }
 
-            .program-details {
+            /* Desktop Details */
+            .program-details-desktop {
               background-color: #5b7c99;
               color: white;
               padding: 40px;
@@ -1566,38 +1567,66 @@ Discover our blend of play, learning, and love today!" name="description" />
               min-height: 200px;
             }
 
-            .program-details h2 {
-              margin-top: 0;
+            /* Mobile Details */
+            .program-details-mobile {
+              display: none;
+              /* Hidden by default */
+              background-color: #5b7c99;
+              color: white;
+              padding: 20px;
+              text-align: left;
+              margin-top: 10px;
+              margin-bottom: 20px;
+              border-radius: 10px;
+              width: 100%;
+              box-sizing: border-box;
+              /* Fix overflow */
             }
 
             .hidden {
-              display: none;
+              display: none !important;
+            }
+
+            /* Responsive */
+            @media (max-width: 768px) {
+              .programs-container {
+                flex-direction: column;
+                align-items: center;
+              }
+
+              .program-card {
+                width: 100%;
+                max-width: 400px;
+              }
+
+              .program-details-desktop {
+                display: none;
+              }
+
+              /* On mobile, we want the active card to NOT scale too much or shift layout weirdly, 
+                  and we want the content to be visible. */
+              .program-card.active {
+                transform: scale(1.02);
+              }
+            }
+
+            @media (min-width: 769px) {
+              .program-details-mobile {
+                display: none !important;
+                /* Force hide on desktop */
+              }
             }
           </style>
 
           <div class="programs-container">
-            <!-- Playgroup Card -->
-            <div class="program-card active" onclick="showProgram('playgroup')">
+            <!-- Playgroup -->
+            <div id="card-playgroup" class="program-card active" onclick="handleProgramClick('playgroup')">
               <img src="https://placehold.co/300x200?text=Playgroup" alt="Playgroup">
               <h3>Playgroup</h3>
               <p>Age 2-3 years</p>
             </div>
-            <!-- Nursery Card -->
-            <div class="program-card" onclick="showProgram('nursery')">
-              <img src="https://placehold.co/300x200?text=Nursery" alt="Nursery">
-              <h3>Nursery</h3>
-              <p>Age 3-4 years</p>
-            </div>
-            <!-- Pre-Primary Card -->
-            <div class="program-card" onclick="showProgram('preprimary')">
-              <img src="https://placehold.co/300x200?text=Pre-Primary" alt="Pre-Primary">
-              <h3>Pre-Primary 1 & 2</h3>
-              <p>Age 4-6 years</p>
-            </div>
-          </div>
-
-          <div class="program-details">
-            <div id="playgroup-content">
+            <div id="mobile-content-playgroup" class="program-details-mobile">
+              <!-- Content injected via JS or static duplicate -->
               <p>Playgroup is a child's first step into independent schooling, gently supporting the transition from
                 their primary caregiver. Our curriculum is rich in play-based opportunities, allowing children to
                 explore, investigate, and experience a wide range of sensory, creative, and physical activities while
@@ -1608,7 +1637,14 @@ Discover our blend of play, learning, and love today!" name="description" />
                 co-curricular activities support overall development. The student-teacher ratio is 10:1, and each
                 session runs for three hours.</p>
             </div>
-            <div id="nursery-content" class="hidden">
+
+            <!-- Nursery -->
+            <div id="card-nursery" class="program-card" onclick="handleProgramClick('nursery')">
+              <img src="https://placehold.co/300x200?text=Nursery" alt="Nursery">
+              <h3>Nursery</h3>
+              <p>Age 3-4 years</p>
+            </div>
+            <div id="mobile-content-nursery" class="program-details-mobile">
               <p>Our Nursery program builds on the foundation laid in Playgroup, introducing more structured learning
                 while maintaining a play-based approach. Children engage in activities that promote social skills, early
                 numeracy, and language development.</p>
@@ -1617,7 +1653,47 @@ Discover our blend of play, learning, and love today!" name="description" />
                 designed to encourage exploration and self-expression, helping children develop confidence and a love
                 for learning.</p>
             </div>
-            <div id="preprimary-content" class="hidden">
+
+            <!-- Pre-Primary -->
+            <div id="card-preprimary" class="program-card" onclick="handleProgramClick('preprimary')">
+              <img src="https://placehold.co/300x200?text=Pre-Primary" alt="Pre-Primary">
+              <h3>Pre-Primary 1 & 2</h3>
+              <p>Age 4-6 years</p>
+            </div>
+            <div id="mobile-content-preprimary" class="program-details-mobile">
+              <p>Pre-Primary 1 & 2 prepares children for formal schooling with a comprehensive curriculum that covers
+                advanced literacy, numeracy, and scientific concepts. We emphasize critical thinking, problem-solving,
+                and collaborative learning.</p>
+              <br>
+              <p>Our holistic approach ensures that children are not only academically ready but also socially and
+                emotionally prepared for the challenges of primary school. Activities are designed to refine fine motor
+                skills and enhance cognitive development.</p>
+            </div>
+          </div>
+
+          <!-- Desktop Details Container -->
+          <div class="program-details-desktop">
+            <div id="desktop-content-playgroup">
+              <p>Playgroup is a child's first step into independent schooling, gently supporting the transition from
+                their primary caregiver. Our curriculum is rich in play-based opportunities, allowing children to
+                explore, investigate, and experience a wide range of sensory, creative, and physical activities while
+                learning to focus on tasks.</p>
+              <br>
+              <p>Learning objectives are designed to build early literacy skills and foster independence. Special events
+                and outdoor field trips provide meaningful, memorable learning experiences, while a variety of
+                co-curricular activities support overall development. The student-teacher ratio is 10:1, and each
+                session runs for three hours.</p>
+            </div>
+            <div id="desktop-content-nursery" class="hidden">
+              <p>Our Nursery program builds on the foundation laid in Playgroup, introducing more structured learning
+                while maintaining a play-based approach. Children engage in activities that promote social skills, early
+                numeracy, and language development.</p>
+              <br>
+              <p>We focus on fostering curiosity and creativity through art, music, and storytelling. The environment is
+                designed to encourage exploration and self-expression, helping children develop confidence and a love
+                for learning.</p>
+            </div>
+            <div id="desktop-content-preprimary" class="hidden">
               <p>Pre-Primary 1 & 2 prepares children for formal schooling with a comprehensive curriculum that covers
                 advanced literacy, numeracy, and scientific concepts. We emphasize critical thinking, problem-solving,
                 and collaborative learning.</p>
@@ -1629,35 +1705,53 @@ Discover our blend of play, learning, and love today!" name="description" />
           </div>
 
           <script>
-            function showProgram(programId) {
-              // Hide all contents
-              document.getElementById('playgroup-content').classList.add('hidden');
-              document.getElementById('nursery-content').classList.add('hidden');
-              document.getElementById('preprimary-content').classList.add('hidden');
+            // Initialize active state logic
+            function handleProgramClick(programId) {
+              const isMobile = window.innerWidth <= 768;
 
-              // Show selected content
-              document.getElementById(programId + '-content').classList.remove('hidden');
-
-              // Update active card styling
-              const cards = document.querySelectorAll('.program-card');
-              cards.forEach(card => card.classList.remove('active'));
-
-              // Find the card that was clicked (this is a bit hacky, normally pass 'this')
-              // But since we use onclick on div, we can just find it by index or passed content
-              // Let's rely on event.currentTarget if we attached listener, but here we used inline onclick.
-              // We'll traverse based on order or easier: pass 'this' in onclick
-            }
-
-            // Re-bind onclick to pass 'this' for cleaner active state handling
-            const programCards = document.querySelectorAll('.program-card');
-            programCards[0].onclick = function () { showProgram('playgroup'); setActive(this); };
-            programCards[1].onclick = function () { showProgram('nursery'); setActive(this); };
-            programCards[2].onclick = function () { showProgram('preprimary'); setActive(this); };
-
-            function setActive(card) {
+              // Deactivate all cards
               document.querySelectorAll('.program-card').forEach(c => c.classList.remove('active'));
-              card.classList.add('active');
+
+              // Activate clicked card
+              document.getElementById('card-' + programId).classList.add('active');
+
+              if (isMobile) {
+                // Mobile behavior: Toggle content below card
+                // Hide all mobile contents
+                document.querySelectorAll('.program-details-mobile').forEach(c => c.style.display = 'none');
+                // Show selected mobile content
+                document.getElementById('mobile-content-' + programId).style.display = 'block';
+              } else {
+                // Desktop behavior: Switch tab content
+                document.getElementById('desktop-content-playgroup').classList.add('hidden');
+                document.getElementById('desktop-content-nursery').classList.add('hidden');
+                document.getElementById('desktop-content-preprimary').classList.add('hidden');
+
+                document.getElementById('desktop-content-' + programId).classList.remove('hidden');
+              }
             }
+
+            // Init mobile state on load if needed
+            window.addEventListener('load', () => {
+              if (window.innerWidth <= 768) {
+                // Check which is active and show it
+                // Default Playgroup is active in HTML
+                document.getElementById('mobile-content-playgroup').style.display = 'block';
+              }
+            });
+
+            // Handle resize just in case
+            window.addEventListener('resize', () => {
+              const activeCard = document.querySelector('.program-card.active');
+              if (activeCard) {
+                const activeId = activeCard.id.replace('card-', '');
+                handleProgramClick(activeId); // Re-apply logic based on new width
+              } else {
+                // If no card is active (e.g., on initial load before any click),
+                // default to 'playgroup' or handle as appropriate.
+                handleProgramClick('playgroup');
+              }
+            });
           </script>
         </section>
       </article>
