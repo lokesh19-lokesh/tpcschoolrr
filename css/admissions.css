@@ -1,5 +1,22 @@
 /* Admissions Page Redesign Styles */
 
+/* Hero Banner (same as contact page) */
+.contact-hero-banner {
+    position: relative;
+    width: 100%;
+    height: 60vh;
+    min-height: 400px;
+    overflow: hidden;
+}
+
+.contact-hero-banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    object-position: center;
+}
+
 .admissions-content * {
     box-sizing: border-box;
 }
