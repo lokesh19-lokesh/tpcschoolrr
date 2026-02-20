@@ -817,8 +817,251 @@ Discover our blend of play, learning, and love today!" name="description" />
                         </div>
                     </div>
                 </section>
+                <section class="campus-intro-section">
+                    <style>
+                        .campus-intro-section {
+                            background-color: #2d4930 !important;
+                            padding: 100px 40px;
+                            margin-top: 60px;
+                            text-align: center;
+                            position: relative;
+                            overflow: hidden;
+                            color: #ffffff !important;
+                        }
 
-            </article>
+                        .campus-intro-section .welcome-text p {
+                            color: #ffffff !important;
+                            opacity: 0.9;
+                        }
+
+                        .campus-intro-section .welcome-heading {
+                            font-size: 48px;
+                            color: #ffffff !important;
+                            margin-bottom: 30px;
+                            font-weight: normal;
+                            letter-spacing: 0.1em;
+                            position: relative;
+                            z-index: 2;
+                            text-transform: uppercase;
+                        }
+
+                        .campus-intro-section .brand-name {
+                            color: #ffffff !important;
+                            font-weight: bold;
+                        }
+
+                        .campus-intro-section .welcome-text {
+                            max-width: 800px;
+                            margin: 0 auto;
+                            font-size: 22px;
+                            line-height: 1.6;
+                            position: relative;
+                            z-index: 2;
+                            font-weight: 300;
+                        }
+
+                        .campus-intro-section .welcome-image.right {
+                            position: absolute;
+                            right: -50px;
+                            bottom: -50px;
+                            width: 300px;
+                            opacity: 0.2;
+                            z-index: 1;
+                            pointer-events: none;
+                        }
+
+                        .campus-content-section {
+                            background-color: #fff;
+                            padding: 120px 20px;
+                            font-family: inherit;
+                        }
+
+                        .campus-container {
+                            max-width: 1200px;
+                            margin: 0 auto;
+                        }
+
+                        .campus-row {
+                            display: flex;
+                            align-items: center;
+                            gap: 100px;
+                            margin-bottom: 140px;
+                        }
+
+                        .campus-row.reverse {
+                            flex-direction: row-reverse;
+                        }
+
+                        .campus-image {
+                            flex: 1.3;
+                            border-radius: 40px;
+                            overflow: hidden;
+                            box-shadow: 0 25px 50px rgba(45, 73, 48, 0.15);
+                        }
+
+                        .campus-image img {
+                            width: 100%;
+                            height: 100%;
+                            display: block;
+                            object-fit: cover;
+                            transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+                        }
+
+                        .campus-image:hover img {
+                            transform: scale(1.05);
+                        }
+
+                        .campus-text {
+                            flex: 1;
+                        }
+
+                        .campus-text h3 {
+                            font-size: 40px;
+                            color: #2d4930;
+                            margin-bottom: 30px;
+                            font-weight: 600;
+                            line-height: 1.2;
+                        }
+
+                        .campus-text p {
+                            font-size: 20px;
+                            line-height: 1.8;
+                            color: #555;
+                            text-align: left !important;
+                            margin: 0 !important;
+                        }
+
+                        .conclusion-box {
+                            background-color: #f4f6f4;
+                            padding: 100px 60px;
+                            border-radius: 50px;
+                            text-align: center;
+                            margin-top: 100px;
+                            border: 2px solid #e1e9e1;
+                        }
+
+                        .conclusion-box p {
+                            font-size: 28px;
+                            font-weight: 500;
+                            color: #2d4930;
+                            margin: 0 auto !important;
+                            max-width: 900px !important;
+                            line-height: 1.4 !important;
+                        }
+
+                        @media (max-width: 1024px) {
+                            .campus-row {
+                                gap: 60px;
+                            }
+                        }
+
+                        @media (max-width: 900px) {
+
+                            .campus-row,
+                            .campus-row.reverse {
+                                flex-direction: column;
+                                gap: 40px;
+                                margin-bottom: 100px;
+                            }
+
+                            .campus-intro-section {
+                                padding: 80px 20px;
+                            }
+
+                            .campus-intro-section .welcome-heading {
+                                font-size: 36px;
+                            }
+
+                            .campus-text h3 {
+                                font-size: 32px;
+                                text-align: center;
+                            }
+
+                            .campus-text p {
+                                text-align: center !important;
+                                font-size: 18px;
+                            }
+
+                            .conclusion-box {
+                                padding: 60px 30px;
+                            }
+
+                            .conclusion-box p {
+                                font-size: 22px;
+                            }
+                        }
+                    </style>
+
+                    <div class="campus-container">
+                        <!-- <img src="newmedias/rabbitleft.gif" alt="" class="welcome-image right"> -->
+                        <h1 class="welcome-heading">OUR <span class="brand-name">CAMPUS</span> & FACILITIES</h1>
+                        <div class="welcome-text">
+                            <p>
+                                At RIVO, we believe that the environment is the third teacher. Our campus is a sanctuary
+                                of learning,
+                                designed to inspire curiosity and nurture the well-being of every child.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="campus-content-section">
+                    <div class="campus-container">
+                        <!-- Section 1: Spacious Campus -->
+                        <div class="campus-row">
+                            <div class="campus-image">
+                                <img src="newmedias/preprimary.jpg" alt="Spacious Campus & Classrooms">
+                            </div>
+                            <div class="campus-text">
+                                <h3>Spacious Campus</h3>
+                                <p>
+                                    Our 5,500 square feet campus offers ample room for learning, play, and
+                                    exploration. Each classroom is well-planned with excellent ventilation and natural
+                                    light, ensuring a fresh and healthy atmosphere for children.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Section 2: Hygiene & Safety -->
+                        <div class="campus-row reverse">
+                            <div class="campus-image">
+                                <img src="newmedias/s1.jpg" alt="Hygiene and Cleanliness">
+                            </div>
+                            <div class="campus-text">
+                                <h3>Hygiene & Cleanliness</h3>
+                                <p>
+                                    We maintain uncompromising standards of hygiene. From regularly sanitized classrooms
+                                    to clean washrooms and play zones, every corner of RIVO is dedicated to the safety
+                                    and health of our little explorers.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Section 3: Safety & Supervision -->
+                        <div class="campus-row">
+                            <div class="campus-image">
+                                <img src="newmedias/s2.jpg" alt="Safety and CCTV Supervision">
+                            </div>
+                            <div class="campus-text">
+                                <h3>Safety & Supervision</h3>
+                                <p>
+                                    Peace of mind is paramount. Our campus features comprehensive CCTV surveillance and
+                                    a
+                                    student-teacher ratio of 1:10, ensuring that every child is seen, heard, and
+                                    supported
+                                    in their learning journey.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="conclusion-box">
+                            <p>
+                                Every detail of our campus is designed to support your child’s safety, comfort, and
+                                joyful discovery.
+                            </p>
+                        </div>
+                    </div>
+                </section>
         </main>
         <footer class="new-footer" id="footer-sections">
             <div class="footer-content">
