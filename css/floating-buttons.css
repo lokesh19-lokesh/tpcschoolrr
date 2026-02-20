@@ -115,13 +115,19 @@
   }
 
   .float-btn {
-    width: 48px;
-    height: 48px;
+    width: 44px;
+    height: 44px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
   }
 
   .float-btn svg {
-    width: 24px;
-    height: 24px;
+    width: 22px;
+    height: 22px;
+  }
+
+  .floating-buttons-container {
+    bottom: 12px;
+    right: 12px;
   }
 }
 

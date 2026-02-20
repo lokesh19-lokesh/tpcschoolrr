@@ -161,3 +161,12 @@
         padding: 30px 20px;
     }
 }
+
+@media (max-width: 767px) {
+
+    html,
+    body {
+        overflow-x: hidden;
+        position: relative;
+    }
+}
