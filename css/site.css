@@ -40788,3 +40788,17 @@ body .keito-plugin.summary-block-wrapper .summary-excerpt p {
         display: none;
     }
 }
+
+/* Global Override: Clean justified centered paragraph blocks (Body only) */
+main p {
+    text-align: justify !important;
+    text-justify: inter-word !important;
+    /* Ensures clean spacing */
+    text-align-last: center !important;
+    /* Centers the last line for symmetry */
+    max-width: 700px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    white-space: normal !important;
+    line-height: 1.7 !important;
+}
