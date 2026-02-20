@@ -40,6 +40,14 @@
     opacity: 1;
 }
 
+/* Mobile adjustments for logo and header */
+@media screen and (max-width: 767px) {
+    .header-title-logo img {
+        max-width: 180px !important;
+        height: auto !important;
+    }
+}
+
 /* Custom Navbar Styles */
 .showOnMobile .header-actions-action--cart {
     display: none !important;

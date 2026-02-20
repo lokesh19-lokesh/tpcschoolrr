@@ -40721,10 +40721,11 @@ body .keito-plugin.summary-block-wrapper .summary-excerpt p {
 @media screen and (max-width: 767px) {
     .welcome-heading {
         font-size: 2rem;
+        margin-top: 10px !important;
     }
 
     .welcome-section {
-        padding: 10vw 6vw;
+        padding: 4vw 6vw !important;
     }
 }
 
@@ -40786,6 +40787,13 @@ body .keito-plugin.summary-block-wrapper .summary-excerpt p {
 @media (max-width: 768px) {
     .welcome-image {
         display: none;
+    }
+
+    html,
+    body {
+        max-width: 100vw;
+        overflow-x: hidden !important;
+        position: relative;
     }
 }
 
