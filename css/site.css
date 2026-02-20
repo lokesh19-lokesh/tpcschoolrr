@@ -40790,18 +40790,28 @@ body .keito-plugin.summary-block-wrapper .summary-excerpt p {
 }
 
 /* Global Override: Clean justified centered paragraph blocks (Body only) */
+/* DESKTOP */
 main p {
-    text-align: justify !important;
-    text-justify: inter-word !important;
-    /* Ensures clean spacing */
-    text-align-last: center !important;
-    /* Centers the last line for symmetry */
-    max-width: 700px !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-    white-space: normal !important;
-    line-height: 1.7 !important;
-    /* Specific Font Requirements */
-    font-family: "aktiv-grotesk", sans-serif !important;
-    font-size: 17.1784px !important;
+    text-align: justify;
+    text-align-last: center;
+    max-width: 720px;
+    margin: 0 auto;
+    line-height: 1.8;
+
+    hyphens: auto;
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
+}
+
+/* MOBILE FIX */
+@media screen and (max-width: 768px) {
+    main p {
+        text-align: center !important;
+        /* stop justify on mobile */
+        text-align-last: center !important;
+        padding-left: 18px;
+        padding-right: 18px;
+        max-width: 100% !important;
+        hyphens: none !important;
+    }
 }
