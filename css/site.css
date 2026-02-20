@@ -40801,4 +40801,7 @@ main p {
     margin-right: auto !important;
     white-space: normal !important;
     line-height: 1.7 !important;
+    /* Specific Font Requirements */
+    font-family: "aktiv-grotesk", sans-serif !important;
+    font-size: 17.1784px !important;
 }
