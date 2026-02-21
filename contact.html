@@ -639,7 +639,7 @@
                     education.
                     Please fill out the form below to start your child's application process.</p>
 
-                  <form action="#" method="POST">
+                  <form action="send-mail.php" method="POST">
                     <div class="form-grid">
                       <div class="form-field">
                         <label for="child-name">Child's name *</label>
@@ -692,7 +692,51 @@
                     <div class="enquire-btn-container">
                       <button type="submit" class="enquire-now-btn">Enquire Now</button>
                     </div>
+                    <!-- Submit success toast -->
+                    <div id="enquiry-toast" style="
+                      display: none;
+                      margin-top: 14px;
+                      padding: 12px 18px;
+                      background: #2d4930;
+                      color: #fff;
+                      border-radius: 10px;
+                      font-size: 14px;
+                      text-align: center;
+                      opacity: 0;
+                      transition: opacity 0.4s ease;
+                      box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+                    ">
+                      🎉 We've got your details — have a nice day!
+                    </div>
                   </form>
+                  <script>
+                    (function () {
+                      var toast = document.getElementById('enquiry-toast');
+
+                      function showToast(msg) {
+                        if (!toast) return;
+                        toast.textContent = msg;
+                        toast.style.display = 'block';
+                        setTimeout(function () { toast.style.opacity = '1'; }, 10);
+                        setTimeout(function () {
+                          toast.style.opacity = '0';
+                          setTimeout(function () { toast.style.display = 'none'; }, 400);
+                        }, 5000);
+                      }
+
+                      /* Show toast after PHP redirect */
+                      var params = new URLSearchParams(window.location.search);
+                      if (params.get('status') === 'success') {
+                        showToast('🎉 We\'ve got your details — have a nice day!');
+                        /* clean URL without reload */
+                        history.replaceState(null, '', window.location.pathname + '#enquiry-form');
+                      } else if (params.get('status') === 'error') {
+                        toast.style.background = '#c0392b';
+                        showToast('⚠️ Something went wrong. Please try again or call us directly.');
+                        history.replaceState(null, '', window.location.pathname);
+                      }
+                    })();
+                  </script>
                 </div>
               </div>
 

@@ -137,9 +137,10 @@
    ============================================ */
 @media (max-width: 420px) {
 
-    /* Expand the fluid-engine grid to have enough rows */
+    /* Expand the fluid-engine grid to have enough rows.
+       Use minmax(0px, auto) so EMPTY rows collapse to 0 — no white gaps. */
     .fe-63219e600d76b8300074c873 {
-        grid-template-rows: repeat(135, minmax(24px, auto)) !important;
+        grid-template-rows: repeat(135, minmax(0px, auto)) !important;
     }
 
     /* Force every value block to span the full 8 columns */
