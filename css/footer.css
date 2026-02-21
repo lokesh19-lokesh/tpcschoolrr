@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+
 /* New Footer Styles (Ekam Style) */
 .new-footer {
     background-color: #2d4930;
@@ -66,13 +68,13 @@
 
 /* Happy Childhood Text */
 .happy-movement-text {
-    font-family: "Shadows Into Light", "Marker Felt", "Comic Sans MS", cursive, sans-serif;
-    font-size: 2.2rem;
-    line-height: 1.1;
+    font-family: "Fredoka One", "Lilita One", "Boogaloo", cursive, sans-serif;
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    line-height: 1.15;
     color: #ffffff;
-    /* White text */
     margin-bottom: 20px;
     text-transform: uppercase;
+    letter-spacing: 0.03em;
 }
 
 .happy-movement-text .highlight {
